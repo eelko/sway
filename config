@@ -12,6 +12,13 @@
 # pressing Super + Shift + C.                                                      #
 #==================================================================================#
 
+#========================#
+# Multiple Monitors      #
+#========================#
+
+output eDP-1 pos 0 0 
+output DP-3 pos -999 -1450
+
 
 #========================#
 # Appearance and Theming #
@@ -136,15 +143,15 @@ bindsym $mod+r mode "resize"
 # Keyboard Shortcuts (Workspaces) #
 #=================================#
 # Switch to workspace
-set $ws1 "1 - Communication"
-set $ws2 "2 - Browsing"
-set $ws3 "3 - System Administration"
-set $ws4 "4 - Learn Linux TV"
-set $ws5 "5 - Media"
-set $ws6 "6 - Writing"
-set $ws7 "7 - Homelab"
-set $ws8 "8 - Home Assistant"
-set $ws9 "9 - Unwind"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
 
 # Move between workspaces
 bindsym $mod+1 workspace $ws1
@@ -237,7 +244,7 @@ bindsym ctrl+$mod+f exec pcmanfm
 
 # Open a terminal emulator:
 set $term alacritty
-bindsym $mod+t exec $term
+bindsym $mod+return exec $term
 
 # Kill focused window:
 bindsym $mod+Shift+q kill
