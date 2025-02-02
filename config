@@ -224,10 +224,29 @@ bindsym $mod+minus scratchpad show
 bindsym XF86AudioRaiseVolume exec "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+; pkill -RTMIN+8 waybar"
 bindsym XF86AudioLowerVolume exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; pkill -RTMIN+8 waybar"
 bindsym XF86AudioMute exec "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; pkill -RTMIN+8 waybar"
+# bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+# bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+# bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+# bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-# Brightness
-bindsym XF86MonBrightnessDown exec light -U 10
-bindsym XF86MonBrightnessUp exec light -A 10
+# Brightness screen
+# bindsym XF86MonBrightnessDown exec light -U 10
+# bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec brightnessctl set 1%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +1%
+
+# Brightness keyboard
+bindsym XF86KbdBrightnessUp exec brightnessctl --device=':white:kbd_backlight' set +1%
+bindsym XF86KbdBrightnessDown exec brightnessctl --device=':white:kbd_backlight' set 1%-
+
+# Brightness touch bar
+bindsym Shift+XF86KbdBrightnessUp exec brightnessctl --device='appletb_backlight' set +50%
+bindsym Shift+XF86KbdBrightnessDown exec brightnessctl --device='appletb_backlight' set 50%-
+
+# PLayer
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 
 #=============================================#
