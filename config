@@ -59,6 +59,13 @@ bar {
 
 
 #====================================#
+# Run background apps          #
+#====================================#
+# 
+exec mate-polkit
+exec opensnitch
+
+#====================================#
 # Keyboard Shortcuts (Sway-specific) #
 #====================================#
 # Set the modifier key to super:
